@@ -1,0 +1,22 @@
+{
+	"name": "ingesta_input_hacia_capa_bronce",
+	"properties": {
+		"description": "Este Pipeline permite la ingesta de los datos de los archivos hacia la primera capa, en este caso es la Capa Bronces",
+		"activities": [
+			{
+				"name": "Obtener_metadata_input",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			}
+		],
+		"annotations": []
+	}
+}
