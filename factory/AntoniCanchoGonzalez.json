@@ -1,0 +1,9 @@
+{
+	"name": "AntoniCanchoGonzalez",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bed552a8-417c-4b41-a7e6-6ae53df374b7",
+		"tenantId": "1036cef1-265e-42bd-b259-83b899e67bb3"
+	}
+}
