@@ -1,0 +1,32 @@
+{
+	"name": "salida_capa_bronce",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Linked_Server_ADLS_con_DataFactory",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"archivo_salida": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().archivo_salida",
+					"type": "Expression"
+				},
+				"folderPath": "capa_bronce",
+				"fileSystem": "prueba"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
