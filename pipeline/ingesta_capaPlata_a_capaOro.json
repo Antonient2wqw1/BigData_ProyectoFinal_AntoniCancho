@@ -60,7 +60,11 @@
 						]
 					}
 				],
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "salida_capa_oro"
+					}
+				],
 				"typeProperties": {
 					"items": {
 						"value": "@activity('Get Metadata1').output.childItems",
