@@ -15,10 +15,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": {
-						"value": "@pipeline().DataFactory",
-						"type": "Expression"
-					}
+					"notebookPath": "/Users/brayanpoje2205@outlook.com"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
 				}
 			},
 			{
@@ -53,47 +54,6 @@
 					"formatSettings": {
 						"type": "ParquetReadSettings"
 					}
-				}
-			},
-			{
-				"name": "ForEach1",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Get Metadata1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [
-					{
-						"name": "salida_capa_oro"
-					}
-				],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Get Metadata1').output.childItems",
-						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "Copy data1",
-							"type": "Copy",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"enableStaging": false
-							}
-						}
-					]
 				}
 			}
 		],
