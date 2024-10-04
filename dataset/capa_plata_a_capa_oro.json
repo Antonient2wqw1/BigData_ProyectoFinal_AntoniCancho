@@ -1,0 +1,38 @@
+{
+	"name": "capa_plata_a_capa_oro",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Linked_Server_ADLS_con_DataFactory",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"archivos_capa_plata": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().archivos_capa_plata",
+					"type": "Expression"
+				},
+				"folderPath": "capa_plata",
+				"fileSystem": "prueba"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Cod_Categoria",
+				"type": "UTF8"
+			},
+			{
+				"name": "Nombre",
+				"type": "UTF8"
+			}
+		]
+	}
+}
